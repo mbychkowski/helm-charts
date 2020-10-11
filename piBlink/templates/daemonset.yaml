@@ -1,17 +1,15 @@
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
-  name: {{ .Values.replicaCount }}
-  labels:
-    k8s-app: fluentd-logging
+  name: {{ .Values.name }}
 spec:
   selector:
     matchLabels:
-      name: {{ .Values.replicaCount }}
+      name: {{ .Values.name }}
   template:
     metadata:
       labels:
-        name: {{ .Values.replicaCount }}
+        name: {{ .Values.name }}
     spec:
       tolerations:
       # this toleration is to have the daemonset runnable on master nodes
@@ -19,7 +17,7 @@ spec:
       - key: node-role.kubernetes.io/master
         effect: NoSchedule
       containers:
-      - name: {{ .Values.replicaCount }}
+      - name: {{ .Values.name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}        
         env:
