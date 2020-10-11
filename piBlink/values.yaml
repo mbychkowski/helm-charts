@@ -1,7 +1,7 @@
 name: pi-blink
 
 image:
-  repository: 
+  repository: mbychkowski/pi-blink
   tag: latest
   pullPolicy: Always
 
