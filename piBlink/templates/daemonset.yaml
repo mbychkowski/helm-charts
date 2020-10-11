@@ -19,6 +19,8 @@ spec:
       containers:
       - name: {{ .Values.name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-        imagePullPolicy: {{ .Values.image.pullPolicy }}        
+        imagePullPolicy: {{ .Values.image.pullPolicy }}    
+        securityContext:
+          allowPrivilegeEscalation: true    
         env:
           {{- toYaml .Values.environment | nindent 10 }}
