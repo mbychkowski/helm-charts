@@ -1,0 +1,4 @@
+apiVersion: v1
+description: A Helm chart for Kubernetes for running simple application on each raspberry pi in cluster
+name: pi-blink
+version: 0.1

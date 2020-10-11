@@ -1,0 +1,10 @@
+name: pi-blink
+
+image:
+  repository: 
+  tag: latest
+  pullPolicy: Always
+
+environment:
+  - name: COLOR
+    value: "blue"
