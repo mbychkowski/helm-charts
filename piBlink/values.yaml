@@ -7,4 +7,4 @@ image:
 
 environment:
   - name: COLOR
-    value: "green"
+    value: "red"
